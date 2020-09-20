@@ -29,7 +29,18 @@ header {
       }
     }
   }
-
+  #contactBtn {
+    background: #cc4343;
+    border: 1px solid #cc4343;
+    height: 30px;
+    width: 100px;
+    color: #fff;
+    &:hover {
+      transition: all 0.5s ease;
+      background: none;
+      border: 1px solid #cc4343;
+    }
+  }
   // main header section
   section.header-main-info {
     padding: 1em;
@@ -40,14 +51,33 @@ header {
     .header-main-info-top {
       margin-bottom: 5em;
       h2 {
-        font-size: 1.9rem;
+        font-size: 6vmin;
         margin: 0.5em auto;
         max-width: $maxWidthObject;
+      }
+      #callToAction {
+        margin: auto;
+        max-width: $maxWidthObject;
+        button {
+          margin-top: 2em;
+          height: 40px;
+          width: 140px;
+          border: 1px solid #cc4343;
+          background: #cc4343;
+          color: #fff;
+          box-shadow: none;
+          &:hover {
+            transition: all 0.5s ease;
+            background: none;
+            border: 1px solid #cc4343;
+          }
+        }
       }
       p {
         margin: auto;
         max-width: $maxWidthObject;
         font-weight: 300;
+        font-size: 3vmin;
       }
     }
 
