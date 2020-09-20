@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Link } from "react-router-dom";
+import { Link as LinkScroll } from "react-scroll";
 //svg
 import facebook from "../img/facebook.svg";
 import instagram from "../img/instagram.svg";
@@ -39,27 +40,57 @@ export default function Footer() {
           <ul>
             <div className="nav-footer-left">
               <li>
-                <Link>Home</Link>
+                <LinkScroll
+                  activeClass="active"
+                  to="home-header"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                >
+                  Home
+                </LinkScroll>
               </li>
               <li>
-                <Link>Properties</Link>
+                <LinkScroll
+                  activeClass="active"
+                  to="homepage-one"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                >
+                  testimonies
+                </LinkScroll>
               </li>
               <li>
-                <Link>Mission</Link>
+                <LinkScroll
+                  activeClass="active"
+                  to="homepage-three"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                >
+                  Vision
+                </LinkScroll>
               </li>
               <li>
-                <Link>Solution</Link>
+                <LinkScroll
+                  activeClass="active"
+                  to="homepage-five"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                >
+                  FAQ
+                </LinkScroll>
               </li>
             </div>
             <div className="nav-footer-right">
               <li>
-                <Link>About</Link>
-              </li>
-              <li>
                 <Link>Contact</Link>
-              </li>
-              <li>
-                <Link>Partners</Link>
               </li>
             </div>
           </ul>
@@ -67,7 +98,7 @@ export default function Footer() {
       </section>
       <section className="footer-bottom">
         <div className="footer-bottom-left">
-          <p>&copy; 2020 Legacy Rebuild Properties all right revsered</p>
+          <p>&copy; 2020 Legacy Rebuild Properties, LLC all right revsered</p>
         </div>
       </section>
     </footer>

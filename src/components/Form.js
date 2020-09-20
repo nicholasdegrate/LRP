@@ -4,13 +4,18 @@ import * as Yup from "yup";
 import * as emailjs from "emailjs-com";
 
 // validation
+// validation
 const emailVal = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 // const phoneVal = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?$/;
 
 const validationConsultation = Yup.object().shape({
-  name: Yup.string()
+  firstName: Yup.string()
     .required("A name is required")
-    .min(2, "please enter your fullname")
+    .min(2, "please enter your first name")
+    .max(50, "enter just you"),
+  lastName: Yup.string()
+    .required("A name is required")
+    .min(2, "please enter your last name")
     .max(50, "enter just you"),
   phone: Yup.number()
     .typeError("that doesn't look like a phone number")
@@ -22,7 +27,12 @@ const validationConsultation = Yup.object().shape({
     .email()
     .required()
     .matches(emailVal, "Email is not valid"),
-  message: Yup.string().min(10).max(250),
+  // message: Yup.string()
+  //   .min(10)
+  //   .max(250),
+  zipCode: Yup.number().required("*").typeError("that is not a zip Code"),
+  countryState: Yup.string().required("*").max(2).trim(),
+  address: Yup.string().required("please enter an address"),
   //  TODO: need a geolocation for validation
 });
 
@@ -32,19 +42,27 @@ export const HomeForm = () => {
   return (
     <Formik
       initialValues={{
-        name: "",
+        firstName: "",
+        lastName: "",
         phone: "",
         email: "",
-        message: "",
+        zipCode: "",
+        countryState: "",
+        address: "",
+        // message: "",
       }}
       validationSchema={validationConsultation}
       onSubmit={(values, { setSubmitting, resetForm }) => {
         setSubmitting(true);
         let template_params = {
           email: `${values.email}`,
-          name: `${values.name}`,
+          firstName: `${values.firstName}`,
+          lastName: `${values.lastName}`,
           phone: `${values.phone}`,
-          message: `${values.message}`,
+          zipCode: `${values.zipCode}`,
+          address: `${values.address}`,
+          countryState: `${values.countryState}`,
+          // message: `${values.message}`,
         };
         setTimeout(() => {
           emailjs
@@ -63,88 +81,74 @@ export const HomeForm = () => {
             .catch(() => {
               setSubmitting(false);
               alert("Errror sending email...");
+              console.log("error");
             });
         }, 400);
       }}
     >
       {({ values, isSubmitting }) => (
-        <Form className="header-contact-form">
-          <div id="form">
-            <div className="form-wrapper">
-              <div className="form-input-container">
-                <h2>Get your House Quote</h2>
-                <div className="form-input">
-                  <label>Name</label>
-                  <Field
-                    type="text"
-                    name="name"
-                    value={`${values.name}`}
-                    className="field"
-                    placeholder="name"
-                  />
-                </div>
-              </div>
-              <div className="form-input-container">
-                <div className="form-input">
-                  <ErrorMessage
-                    name="phone"
-                    component="div"
-                    className="error"
-                  />
-                  <label>Phone</label>
-                  <Field
-                    type="tel"
-                    name="phone"
-                    pattern="[0-9]*"
-                    value={`${values.phone}`}
-                    className="field"
-                    placeholder="phone"
-                  />
-                </div>
-              </div>
-              <div className="form-input-container">
-                <div className="form-input">
-                  <ErrorMessage
-                    name="email"
-                    component="div"
-                    className="error"
-                  />
-                  <label>Email</label>
-                  <Field
-                    type="email"
-                    name="email"
-                    value={`${values.email}`}
-                    placeholder="email"
-                    className="field"
-                  />
-                </div>
-              </div>
-              <div className="form-input-container checkbox ">
-                <label class="container">
-                  <input type="checkbox" />
-                  <span class="checkmark"></span>
-                </label>
-                <p>
-                  I agree to the Terms of service and Term of Privacy policy of
-                  Legacy Rebuild Properties comapny
-                </p>
-              </div>
-              <button
-                //   onClick={() => {
-                //     Event(
-                //       "CONSULTATION",
-                //       "Consultation has been submitted",
-                //       "CONSULTATION_FORM"
-                //     );
-                //   }}
-                type="submit"
-                disabled={isSubmitting}
-                className="submit-btn"
-              >
-                Submit
-              </button>
-            </div>
+        <Form id="myForm">
+          <h2>Get your cash offer today!</h2>
+          <div className="state-container">
+            <Field
+              type="text"
+              name="firstName"
+              value={`${values.firstName}`}
+              className="field"
+              placeholder="First Name"
+            />
+            <Field
+              type="text"
+              name="lastName"
+              value={`${values.lastName}`}
+              className="field"
+              placeholder="Last Name"
+            />
           </div>
+          <ErrorMessage name="email" component="div" className="error" />
+          <Field
+            type="email"
+            name="email"
+            value={`${values.email}`}
+            placeholder="email"
+            className="field"
+          />
+          <ErrorMessage name="phone" component="div" className="error" />
+          <Field
+            type="tel"
+            name="phone"
+            pattern="[0-9]*"
+            value={`${values.phone}`}
+            className="field"
+            placeholder="phone"
+          />
+          <ErrorMessage name="address" component="div" className="error" />
+          <Field
+            type="text"
+            name="address"
+            value={`${values.address}`}
+            className="field"
+            placeholder="enter address"
+          />
+          <div className="state-container">
+            <Field
+              type="text"
+              name="countryState"
+              value={`${values.countryState}`}
+              className="field state-zip"
+              placeholder="state"
+            />
+            <Field
+              type="text"
+              name="zipCode"
+              value={`${values.zipCode}`}
+              className="field state-zip"
+              placeholder="zip Code"
+            />
+          </div>
+          <button type="submit" disabled={isSubmitting} className="submit-btn">
+            Submit
+          </button>
         </Form>
       )}
     </Formik>
