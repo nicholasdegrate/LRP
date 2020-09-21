@@ -153,27 +153,20 @@ button {
   background: color(blue1);
   height: 100%;
   position: relative;
-  display: grid;
+  text-align: center;
 
   .homepage-four-bottom {
     margin: 3em auto;
-    padding: 1em;
+    padding: 2em;
     width: 96%;
     max-width: $maxWidth - 300px;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
     h3 {
       color: #fff;
     }
     h2 {
       font-weight: 400;
       max-width: 450px;
-    }
-    p {
-      font-size: 0.9em;
-      margin: 0.3em 0;
-      max-width: $maxWidthObject;
+      margin: 0.5em auto;
     }
   }
 }
@@ -239,12 +232,6 @@ button {
 }
 
 // media queries
-@media screen and (min-width: 700px) {
-  .homepage-four-bottom {
-    grid-template-columns: 1fr 1fr !important;
-    grid-template-rows: 1fr !important;
-  }
-}
 
 @media screen and (min-width: 800px) {
   .homepage-two {
@@ -317,20 +304,6 @@ button {
       justify-self: center;
       grid-row: 2/3;
       grid-column: 2/3;
-    }
-  }
-
-  // homepage four
-  .homepage-four {
-    .homepage-four-bottom {
-      grid-template-columns: 1fr 1fr !important;
-      grid-template-rows: 1fr !important;
-      .bottom-left {
-        justify-self: start;
-      }
-      .bottom-right {
-        justify-self: flex-end;
-      }
     }
   }
 

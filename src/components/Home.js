@@ -77,14 +77,11 @@ export const Home = () => {
         <section className="homepage-one">
           <h3>Testimonies</h3>
           <h2>Who uses Legacy Rebuild Properties</h2>
-          <h3 id="clients-name">John Smith</h3>
-          <div className="client-img">
-            <img src={face} alt="person face" />
-          </div>
+          <h3 id="clients-name">Mary Mcdonald</h3>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia
-            assumenda maxime earum fugit recusandae cupiditate dolore
-            perspiciatis
+            I was extremely pleased with how I was treated and how high the bid
+            was for my home. They were honest, respectful, and handled my
+            granddaughter and I as if we were family.
           </p>
         </section>
         {/* end homepage one  */}
@@ -156,12 +153,12 @@ export const Home = () => {
               </h2>
             </div>
             <div className="bottom-right">
-              <p>
+              {/* <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Doloremque sapiente consequatur animi totam impedit blanditiis
                 illo facilis quia molestiae! Totam, tenetur. Tempora, similique.
                 Illo blanditiis, ullam expedita quod quo temporibus?
-              </p>
+              </p> */}
             </div>
           </div>
         </section>
