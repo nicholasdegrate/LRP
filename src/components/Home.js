@@ -77,7 +77,7 @@ export const Home = () => {
         <section className="homepage-one">
           <h3>Testimonies</h3>
           <h2>Who uses Legacy Rebuild Properties</h2>
-          <h3 id="clients-name">Mary Mcdonald</h3>
+          <h3 id="clients-name">Mary M.</h3>
           <p>
             I was extremely pleased with how I was treated and how high the bid
             was for my home. They were honest, respectful, and handled my
