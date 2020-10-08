@@ -60,7 +60,7 @@ export default function Footer() {
                   offset={-100}
                   duration={500}
                 >
-                  testimonies
+                  Testimonies
                 </LinkScroll>
               </li>
               <li>
