@@ -75,19 +75,19 @@ export const Home = () => {
       <section className="main-section-homepage">
         {/* begin homepage one */}
         <section className="homepage-one">
-          <h3>Testimonies</h3>
-          <h2>Who uses Legacy Rebuild Properties</h2>
+          <h3>Testimonials</h3>
+          <h2>Who uses Legacy Rebuild Properties...</h2>
           <h3 id="clients-name">Mary M.</h3>
           <p>
-            I was extremely pleased with how I was treated and how high the bid
-            was for my home. They were honest, respectful, and handled my
-            granddaughter and I as if we were family.
+            " I was extremely pleased with how I was treated and how high the
+            bid was for my home. They were honest, respectful, and handled my
+            granddaughter and I as if we were family."
           </p>
         </section>
         {/* end homepage one  */}
         <section className="homepage-three">
           <div className="homepage-three-top">
-            <h3>VISIONS</h3>
+            <h3>"VISIONS"</h3>
             <h2>
               Our vision is to help you gain a fresh
               <br /> start using a no-hassle approach
@@ -147,7 +147,7 @@ export const Home = () => {
         <section className="homepage-four">
           <div className="homepage-four-bottom">
             <div className="bottom-left">
-              <h3>SOLUTIONS</h3>
+              <h3>"SOLUTIONS"</h3>
               <h2>
                 No matter the condition or situation we will buy your property!
               </h2>
@@ -228,7 +228,7 @@ export const Home = () => {
                 questions over the phone, we love speaking with clients and
                 helping them feel at ease during the process of selling us their
                 home. You can send us your question(s) online or call us
-                directly: 817-888-8285.
+                directly: 817-480-1556.
               </p>
             </li>
           </ul>
