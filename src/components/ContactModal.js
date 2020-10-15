@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { CloseButton, Button } from "@chakra-ui/core";
 import { gsap } from "gsap";
 import { HomeForm } from "./Form";
 
@@ -59,9 +60,42 @@ const HomeContact = ({ contact, setContact }) => {
       <div ref={(el) => (revealContactSide = el)} className="contact-bg">
         <div className="contact-wrapper">
           <div className="close-contact-btn">
-            <button onClick={handleClose}>
-              <p>Close</p>
-            </button>
+            <Button   
+                height='30px'
+                width='30px'
+                bg='#fff'
+                borderRadius='5px'
+                size="sm"
+                border="none"
+                outline="none"
+                cursor="pointer"
+                _hover={{ bg: "#165A87", color: "#fff", transition: "all .3s ease-in .1s" }}
+                _active={{
+                  bg: "#165A87", color: "#fff", transition: "all .3s ease-in .1s",
+                }}
+                // _focus={{
+                //   boxShadow:
+                //     "0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15)",
+                // }}
+             onClick={handleClose}>
+              <p><CloseButton  height='30px'
+                width='30px'
+                bg='#fff'
+                borderRadius='5px'
+                size="sm"
+                border="none"
+                outline="none"
+                cursor="pointer"
+                _hover={{ bg: "#165A87", color: "#fff", transition: "all .3s ease-in .1s" }}
+                _active={{
+                  bg: "#165A87", color: "#fff", transition: "all .3s ease-in .1s",
+                }}
+                // _focus={{
+                //   boxShadow:
+                //     "0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15)",
+                // }}
+                size="md" cursor='pointer' /></p>
+            </Button>
           </div>
           <div id="contact-container">
             <HomeForm />

@@ -1,9 +1,14 @@
-import React, { useState, useEffect, Fragment } from "react";
-// import { withRouter } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Button } from "@chakra-ui/core"
+
 import { Link, withRouter } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
 
 import HomeContact from "./ContactModal";
+
+// images 
+import logo from "../img/logo.svg";
+import wave from '../img/wave.svg';
 
 const Header = ({ history }) => {
   // state of our contact
@@ -64,9 +69,16 @@ const Header = ({ history }) => {
 
   return (
     <div id="nav-wrapper">
+      <div className='wave-bg'>
+      <img src={wave} alt=""/>
+
+      </div>
       <nav>
         {/* company title */}
-        <h1>Legacy Rebuild Properties</h1>
+        <h1></h1>
+        <div className='logo'>
+          <img src={logo} alt=""/>
+        </div>
         {/* mobile nav container */}
         {/* <div className="mobile-nav">
           <div className="hamburger">
@@ -136,13 +148,30 @@ const Header = ({ history }) => {
         <div className="desktop-nav-contact">
           <ul>
             <li>
-              <button
+              <Button
+            size="sm"
+            border="2px"
+            bg="#1A8801"
+            borderColor="#1A8801"
+            leftIcon="email"
+            cursor="pointer"
+            color="#fff"
+            _hover={{ bg: "#fff", color: "#000", transition: "all .3s ease-in .1s" }}
+            _active={{
+              bg: "#dddfe2",
+              transform: "scale(0.98)",
+              borderColor: "#bec3c9",
+            }}
+            _focus={{
+              boxShadow:
+                "0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15)",
+            }}
                 id="contactBtn"
                 disabled={disabledContact}
                 onClick={handleContact}
               >
                 Contact
-              </button>
+              </Button>
             </li>
           </ul>
         </div>

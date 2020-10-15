@@ -1,17 +1,40 @@
 header {
   height: 100%;
-  max-height: 800px;
-  background: color(blue1);
+  max-height: 900px;
+  background: #165a87;
 
   #nav-wrapper {
-    padding: 1em;
+    height: 100px;
+    padding: 2em 1em;
+    position: relative;
+    .wave-bg {
+      position: absolute;
+      z-index: 2;
+      transform: rotate(360deg);
+      top: -0.1em;
+      left: 0;
+      width: 100%;
+      height: 300%;
+      min-height: 600px;
+    }
     nav {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 4;
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr;
-      // justify-content: space-between;
-      h1 {
-        font-weight: 300;
+      position: relative;
+      .logo {
+        position: absolute;
+        left: -10em;
+        top: -14em;
+
+        img {
+          width: 500px;
+          height: 500px;
+        }
       }
       .mobile-nav {
         justify-self: end;
@@ -30,29 +53,32 @@ header {
     }
   }
   #contactBtn {
-    background: #cc4343;
-    border: 1px solid #cc4343;
+    // background: #1a8801;
+    // border: 1px solid #1a8801;
     height: 30px;
     width: 100px;
-    color: #fff;
-    &:hover {
-      transition: all 0.5s ease;
-      background: none;
-      border: 1px solid #cc4343;
-    }
+    // color: #fff;
+    // &:hover {
+    //   transition: all 0.5s ease;
+    //   background: none;
+    //   border: 1px solid#1a8801;
+    // }
   }
   // main header section
   section.header-main-info {
     padding: 1em;
     width: 100%;
     max-width: $maxWidth;
-    margin: 3em auto;
+    margin: 10em auto;
 
     .header-main-info-top {
       margin-bottom: 5em;
+      max-height: 200px;
+      position: relative;
+
       h2 {
         font-weight: bolder;
-        font-size: 7vmin;
+        font-size: 5.5vmin;
         margin: 0.5em auto;
         max-width: $maxWidthObject;
       }
@@ -60,25 +86,15 @@ header {
         margin: auto;
         max-width: $maxWidthObject;
         button {
-          margin-top: 2em;
-          height: 40px;
-          width: 140px;
-          border: 1px solid #cc4343;
-          background: #cc4343;
-          color: #fff;
-          box-shadow: none;
-          &:hover {
-            transition: all 0.5s ease;
-            background: none;
-            border: 1px solid #cc4343;
-          }
+          margin-top: 1em;
         }
       }
       p {
         margin: auto;
         max-width: $maxWidthObject;
         font-weight: 300;
-        font-size: 3vmin;
+        font-size: 1.1em;
+        color: rgb(207, 207, 207);
       }
     }
 
@@ -105,6 +121,17 @@ header {
 
 /// media queries
 @media screen and (min-width: 800px) {
+  #nav-wrapper {
+    .wave-bg {
+      min-height: 450px !important;
+    }
+  }
+  #callToAction {
+    position: absolute;
+    z-index: 9;
+    left: 60%;
+    top: 1em;
+  }
   nav {
     grid-template-columns: 1fr 1fr 1fr !important;
     .mobile-nav {
@@ -114,11 +141,17 @@ header {
     .desktop-nav-contact {
       display: block;
       ul {
+        color: #000;
         display: flex;
         li {
-          margin: 0.5em;
+          margin: 0.6em;
           a {
+            font-size: 1.2em;
             cursor: pointer;
+            &:hover {
+              border-bottom: 2px solid #165a87;
+              transition: all 0.1s ease-out;
+            }
           }
         }
       }
@@ -150,55 +183,6 @@ header {
       width: 90% !important;
       margin: 3em auto;
       position: relative;
-
-      .header-page-slider {
-        display: block !important;
-        ul {
-          margin-bottom: 2em;
-          width: 50%;
-          display: grid;
-          grid-template-columns: 1fr 2fr 1fr;
-          grid-template-rows: 1fr;
-          justify-content: center;
-          align-items: center;
-          .header-slider-num {
-            justify-self: flex-end;
-            padding-right: 2em;
-            font-weight: 300;
-          }
-          .header-slider-content {
-            p {
-              font-size: 0.8em;
-            }
-          }
-          .btn-container-header {
-            display: flex;
-            align-items: center;
-            height: 100%;
-            button {
-              width: 30%;
-              height: 70%;
-              padding: 1.2em;
-              border: none;
-              img {
-                height: 100%;
-              }
-              .arrow-rotate {
-                transform: rotate(180deg);
-              }
-            }
-            .prev {
-              background: color(accentThree);
-              .left-arrow {
-                filter: invert(0.5);
-              }
-            }
-            .next {
-              background: #fff;
-            }
-          }
-        }
-      }
 
       .header-contact-form {
         display: block !important;

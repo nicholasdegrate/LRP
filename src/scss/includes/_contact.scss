@@ -9,7 +9,7 @@
   width: 100%;
   padding: 1em;
   .contact-bg {
-    background: #cc4343;
+    background: #1a8801;
     top: 0;
     right: 0;
     bottom: 0;
@@ -32,15 +32,15 @@
     .close-contact-btn {
       justify-self: right;
       cursor: pointer;
-      button {
-        background: none;
-        border: none;
-      }
-      p {
-        font-size: 1.5em;
-        color: #fff;
-        cursor: pointer;
-      }
+      // button {
+      //   background: none;
+      //   border: none;
+      // }
+      // p {
+      //   // font-size: 1.5em;
+      //   // color: #fff;
+      //   // cursor: pointer;
+      // }
     }
 
     #contact-container {

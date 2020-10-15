@@ -1,13 +1,13 @@
-import React, { Component, useState, Fragment } from "react";
-import gsap from "gsap";
+import React, { useState, Fragment } from "react";
+import { Button } from "@chakra-ui/core";
 // component
 import Header from "../components/Header";
 import HomeContact from "../components/ContactModal";
 // imgs
 import house from "../img/houseMainPage.jpg";
 import livingRoom from "../img/livingRoom.jpg";
-import face from "../img/face.jpg";
-
+import WaveTop from '../img/minorWaveTop.svg';
+import waveBottom from '../img/minorWave.svg';
 export const Home = () => {
   const [contact, setContact] = useState({
     initial: false,
@@ -57,9 +57,29 @@ export const Home = () => {
                 Call us today to get a competitive
                 <br /> cash offer for your home!
               </p>
-              <button disabled={disabledContact} onClick={handleContact}>
+              <Button size="md"
+                height="48px"
+                width="200px"
+                border="2px"
+                rightIcon="arrow-forward"
+                bg="#1A8801"
+                borderColor="#1A8801"
+                cursor="pointer"
+                color="#fff"
+                _hover={{ bg: "#fff", color: "#000", transition: "all .3s ease-in .1s" }}
+                _active={{
+                  bg: "#dddfe2",
+                  transform: "scale(0.98)",
+                  borderColor: "#bec3c9",
+                }}
+                _focus={{
+                  boxShadow:
+                    "0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15)",
+                }}
+                disabled={disabledContact}
+                onClick={handleContact}>
                 Contact Us
-              </button>
+              </Button>
             </div>
           </div>
 
@@ -124,7 +144,7 @@ export const Home = () => {
                   cannot recover from and begin "robbing from Peter to pay
                   Paul". We want to help you prevent harming your lifestyle,
                   credit, peace of mind, and most importantly your legacy. We
-                  will help you rebuild.!
+                  will help you rebuild!
                 </p>
               </li>
               <li>
@@ -143,8 +163,13 @@ export const Home = () => {
           </div>
         </section>
         {/* end homepage three */}
+        <section id="homepage-four-wrapper">
 
+          <div className="minor-wave-top">
+            <img src={WaveTop} alt=""/>
+          </div>
         <section className="homepage-four">
+      
           <div className="homepage-four-bottom">
             <div className="bottom-left">
               <h3>"SOLUTIONS"</h3>
@@ -161,6 +186,11 @@ export const Home = () => {
               </p> */}
             </div>
           </div>
+        </section>
+
+        <div className="minor-wave-bottom">
+            <img src={waveBottom} alt=""/>
+         </div>
         </section>
         {/* hompage five */}
         <section className="homepage-five">
@@ -234,6 +264,7 @@ export const Home = () => {
           </ul>
         </section>
         {/* end homepage five */}
+    
       </section>
       {/* main section homepage */}
       <HomeContact contact={contact} setContact={setContact} />

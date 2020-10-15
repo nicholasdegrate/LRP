@@ -81,7 +81,7 @@ button {
   grid-template-rows: 50% 1fr;
   color: #000;
   .homepage-two-top {
-    margin-bottom: 3em;
+    margin: 5em 0;
     h3 {
       color: color(accentFour);
     }
@@ -149,15 +149,25 @@ button {
   }
 }
 // homepage-four
+#homepage-four-wrapper {
+  position: relative;
+
+  .minor-wave-top {
+    margin-bottom: -1em;
+  }
+  .minor-wave-bottom {
+    margin-top: -1em;
+  }
+}
 .homepage-four {
-  background: color(redish);
+  background: #1a8801;
   height: 100%;
   position: relative;
   text-align: center;
 
   .homepage-four-bottom {
-    margin: 3em auto;
-    padding: 2em;
+    margin: 0em auto;
+    padding: 0em 0 2em 0em;
     width: 96%;
     max-width: $maxWidth - 300px;
     h3 {
