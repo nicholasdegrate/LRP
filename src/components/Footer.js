@@ -1,14 +1,20 @@
-import React from "react";
+import React, {Fragment} from "react";
 import { BrowserRouter as Link } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
 //svg
 import facebook from "../img/facebook.svg";
 import instagram from "../img/instagram.svg";
 import youtube from "../img/youtube.svg";
+import wave from '../img/wave-1.svg';
 
 export default function Footer() {
   let date = new Date();
   return (
+    <Fragment>
+
+      <div className="wave-bg-footer">
+        <img src={wave} alt=""/>
+        </div>      
     <footer>
       <section className="footer-top">
         <div className="footer-top-container">
@@ -90,7 +96,10 @@ export default function Footer() {
             </div>
             <div className="nav-footer-right">
               <li>
-                <Link>Contact</Link>
+                <p>Phone: 817-480-1556</p>
+              </li>
+              <li>
+                <p>Email: legacyrebuildproperties@gmail.com</p>
               </li>
             </div>
           </ul>
@@ -102,5 +111,6 @@ export default function Footer() {
         </div>
       </section>
     </footer>
+    </Fragment>
   );
 }

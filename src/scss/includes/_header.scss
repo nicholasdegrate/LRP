@@ -16,6 +16,16 @@ header {
       width: 100%;
       height: 300%;
       min-height: 600px;
+      outline: none;
+      border: none;
+      pointer-events: none;
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+      -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
     }
     nav {
       position: absolute;
@@ -27,6 +37,17 @@ header {
       grid-template-rows: 1fr;
       position: relative;
       .logo {
+        outline: none;
+        border: none;
+        pointer-events: none;
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                                      supported by Chrome, Edge, Opera and Firefox */
+
         position: absolute;
         left: -10em;
         top: -14em;
@@ -38,13 +59,25 @@ header {
       }
       .mobile-nav {
         justify-self: end;
+        position: absolute;
+        z-index: 1000;
         .hamburger {
+          display: none;
+          position: absolute;
+          right: 0;
+          top: 0;
           width: 1.5em;
           cursor: pointer;
+          button {
+            outline: none;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+          }
           .line {
             margin: 0.4em;
-            background: #fff;
-            height: 1px;
+            background: #000;
+            height: 2px;
             width: 100%;
             border-radius: 5px;
           }
@@ -165,6 +198,7 @@ header {
   }
 
   // home header
+
   section.header-main-info {
     .header-main-info-top {
       margin-bottom: 8em !important;

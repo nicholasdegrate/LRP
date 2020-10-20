@@ -4,6 +4,7 @@ import { Button } from "@chakra-ui/core"
 import { Link, withRouter } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
 
+import Hamburger from "./Hamburger";
 import HomeContact from "./ContactModal";
 
 // images 
@@ -11,6 +12,13 @@ import logo from "../img/logo.svg";
 import wave from '../img/wave.svg';
 
 const Header = ({ history }) => {
+  
+  // State of our Menu
+  const [state, setState] = useState({
+    initial: false,
+    clicked: null,
+    menuName: "Menu",
+  });
   // state of our contact
 
   const [contact, setContact] = useState({
@@ -20,6 +28,15 @@ const Header = ({ history }) => {
   // state of our contact button
   const [disabledContact, setDisabledContact] = useState(false);
 
+   // State of our button
+   const [disabledMenu, setDisabledMenu] = useState(false);
+
+  useEffect(() => {
+    //Listening for page changes.
+    history.listen(() => {
+      setState({ clicked: false, menuName: "Menu" });
+    });
+  }, [history]);
   //Use Effect
   useEffect(() => {
     history.listen(() => {
@@ -27,6 +44,28 @@ const Header = ({ history }) => {
     });
   }, [history]);
 
+
+  // Toggle menu
+  const handleMenu = () => {
+    disableMenu();
+    if (state.initial === false) {
+      setState({
+        initial: null,
+        clicked: true,
+        menuName: "Close",
+      });
+    } else if (state.clicked === true) {
+      setState({
+        clicked: !state.clicked,
+        menuName: "Menu",
+      });
+    } else if (state.clicked === false) {
+      setState({
+        clicked: !state.clicked,
+        menuName: "Close",
+      });
+    }
+  };
   // toggle contact
   const handleContact = () => {
     disableContact();
@@ -66,6 +105,14 @@ const Header = ({ history }) => {
       setDisabledContact(false);
     });
   };
+    // Determine if out menu button should be disabled
+    const disableMenu = () => {
+      setDisabledMenu(!disabledMenu);
+      setTimeout(() => {
+        setDisabledMenu(false);
+      });
+    };
+  
 
   return (
     <div id="nav-wrapper">
@@ -80,13 +127,18 @@ const Header = ({ history }) => {
           <img src={logo} alt=""/>
         </div>
         {/* mobile nav container */}
-        {/* <div className="mobile-nav">
+        <div className="mobile-nav">
           <div className="hamburger">
+            <button
+             disabled={disabledMenu}
+             onClick={handleMenu}
+            >
             <div className="line"></div>
             <div className="line"></div>
             <div className="line"></div>
+            </button>
           </div>
-        </div> */}
+        </div>
         {/* end mobile container */}
 
         {/* desktop nav container */}
@@ -177,6 +229,7 @@ const Header = ({ history }) => {
         </div>
         {/* end desktop nav contact */}
       </nav>
+      <Hamburger state={state} />
       <HomeContact contact={contact} setContact={setContact} />
     </div>
   );

@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
+import {
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText,
+} from "@chakra-ui/core";
 import * as Yup from "yup";
 import * as emailjs from "emailjs-com";
 
@@ -65,8 +71,7 @@ export const HomeForm = () => {
           // message: `${values.message}`,
         };
         setTimeout(() => {
-          emailjs
-            .send(
+          emailjs.send(
               "gmail",
               `${process.env.REACT_APP_TEMPLATE_ID}`,
               template_params,
@@ -96,7 +101,7 @@ export const HomeForm = () => {
               value={`${values.firstName}`}
               className="field"
               placeholder="First Name"
-            />
+           />
             <Field
               type="text"
               name="lastName"

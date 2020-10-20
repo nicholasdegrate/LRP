@@ -9,7 +9,6 @@ export const reveal = (node1, node2) => {
     duration: 0.8,
     height: 0,
     transformOrigin: "right top",
-    skewY: 2,
     ease: "power3.inOut",
     stagger: {
       amount: 0.1,

@@ -1,13 +1,25 @@
 import React, { useState, Fragment } from "react";
 import { Button } from "@chakra-ui/core";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionHeader,
+  AccordionPanel,
+  AccordionIcon,
+  Box,
+} from "@chakra-ui/core";
+
 // component
 import Header from "../components/Header";
 import HomeContact from "../components/ContactModal";
 // imgs
 import house from "../img/houseMainPage.jpg";
 import livingRoom from "../img/livingRoom.jpg";
-import WaveTop from '../img/minorWaveTop.svg';
-import waveBottom from '../img/minorWave.svg';
+import group from '../img/group.svg';
+import book from '../img/open-book.svg';
+import vote from '../img/positive-vote.svg';
+
+
 export const Home = () => {
   const [contact, setContact] = useState({
     initial: false,
@@ -82,7 +94,6 @@ export const Home = () => {
               </Button>
             </div>
           </div>
-
           {/*  header page slider */}
           <div className="header-main-info-bottom">
             <img src={house} alt="living room" />
@@ -119,7 +130,7 @@ export const Home = () => {
           <div className="homepage-three-right">
             <ul>
               <li>
-                <h2>Who We Are</h2>
+                <h2> <img src={group} alt=""/> Who We Are</h2>
                 <p>
                   Hello, here at Legacy rebuild properties our is mission to
                   reach out and help as many distressed homeowners as possible.
@@ -136,7 +147,7 @@ export const Home = () => {
                 </p>
               </li>
               <li>
-                <h2>Our Philosophy</h2>
+                <h2><img src={book} alt=""/> Our Philosophy</h2>
                 <p>
                   We understand there are times that life just happens, whether
                   we are prepared for it or not. And unfortunately during those
@@ -148,7 +159,7 @@ export const Home = () => {
                 </p>
               </li>
               <li>
-                <h2>Our Specialty</h2>
+                <h2> <img src={vote} alt=""/> Our Specialty</h2>
                 <p>
                   We have over 20 years in home mortgage experience ranging from
                   loan origination, foreclosure, bankruptcy, and modification
@@ -165,9 +176,6 @@ export const Home = () => {
         {/* end homepage three */}
         <section id="homepage-four-wrapper">
 
-          <div className="minor-wave-top">
-            <img src={WaveTop} alt=""/>
-          </div>
         <section className="homepage-four">
       
           <div className="homepage-four-bottom">
@@ -178,19 +186,11 @@ export const Home = () => {
               </h2>
             </div>
             <div className="bottom-right">
-              {/* <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Doloremque sapiente consequatur animi totam impedit blanditiis
-                illo facilis quia molestiae! Totam, tenetur. Tempora, similique.
-                Illo blanditiis, ullam expedita quod quo temporibus?
-              </p> */}
+
             </div>
           </div>
         </section>
 
-        <div className="minor-wave-bottom">
-            <img src={waveBottom} alt=""/>
-         </div>
         </section>
         {/* hompage five */}
         <section className="homepage-five">
@@ -202,65 +202,70 @@ export const Home = () => {
                 <br /> Questions
               </h2>
             </li>
-            <li>
-              <div className="choose-response">
-                <h3>Who typically sells us their home?</h3>
-              </div>
-              <p>
-                People from all walks of life sell to us, but they all share one
-                thing in common: They want to sell their house to a trusted
-                professional, who can make them an immediate cash offer, and
-                close quickly; while ensuring integrity during the entire
-                process.
-              </p>
-            </li>
-            <li>
-              <div className="choose-response">
-                <h3>Will you pay market value for my home?</h3>
-              </div>
-              <p>
-                Our company is, first and foremost, tenured real estate
-                investors. We invest tons of time and upfront money to renovate
-                homes, and we only make a profit once we sell the home in its
-                updated condition (a high risk at times). Once our team has
-                evaluated the condition of your home, we will then make a
-                competitive, no-obligation cash offer based on the current
-                market value of your home after a successful renovation,
-                discounting all associated renovation costs!
-              </p>
-            </li>
-            <li>
-              <div className="choose-response">
-                <h3>Will you pay market value for my home?</h3>
-              </div>
-              <p>
-                Yes! We even buy townhouses, duplexes, and multi-tenant
-                buildings.
-              </p>
-            </li>
-            <li>
-              <div className="choose-response">
-                <h3>
-                  Do you charge a fee for visiting my house and making an offer?
-                </h3>
-              </div>
-              <p>*NO! We will provide you with a completely free estimate.</p>
-            </li>
-            <li>
-              <div className="choose-response">
-                <h3>
-                  What if I have more questions before deciding to sell -my
-                  home?
-                </h3>
-              </div>
-              <p>
-                Please feel free to contact us and discuss any additional
-                questions over the phone, we love speaking with clients and
-                helping them feel at ease during the process of selling us their
-                home. You can send us your question(s) online or call us
-                directly: 817-480-1556.
-              </p>
-            </li>
+            <Accordion allowToggle>
+         
+         <AccordionItem >
+           <AccordionHeader className='faq-wrapper-box' _expanded={{ bg: "#165a87", color: "white" }}>
+             <Box className='faq-box' flex="1" textAlign="left" >
+             Who typically sells us their home?
+             </Box>
+             <AccordionIcon />
+           </AccordionHeader>
+           
+           <AccordionPanel pb={4}>
+               People from all walks of life sell to us, but they all share one
+               thing in common: They want to sell their house to a trusted
+               professional, who can make them an immediate cash offer, and
+               close quickly; while ensuring integrity during the entire
+               process.
+           </AccordionPanel>
+         </AccordionItem>
+
+         <AccordionItem>
+           <AccordionHeader className='faq-wrapper-box' _expanded={{ bg: "#165a87", color: "white" }}>
+             <Box className='faq-box' flex="1" textAlign="left">
+             Will you pay market value for my home?
+             </Box>
+             <AccordionIcon />
+           </AccordionHeader>
+           <AccordionPanel pb={4}>
+           Our company is, first and foremost, tenured real estate
+               investors. We invest tons of time and upfront money to renovate
+               homes, and we only make a profit once we sell the home in its
+               updated condition (a high risk at times). Once our team has
+               evaluated the condition of your home, we will then make a
+               competitive, no-obligation cash offer based on the current
+               market value of your home after a successful renovation,
+               discounting all associated renovation costs!.
+           </AccordionPanel>
+         </AccordionItem>
+
+         <AccordionItem>
+           <AccordionHeader className='faq-wrapper-box' _expanded={{ bg: "#165a87", color: "white" }}>
+             <Box className='faq-box' flex="1" textAlign="left">
+             Do you charge a fee for visiting my house and making an offer?
+             </Box>
+             <AccordionIcon />
+           </AccordionHeader>
+           <AccordionPanel pb={4}>
+           *NO! We will provide you with a completely free estimate.
+           </AccordionPanel>
+         </AccordionItem>
+
+         <AccordionItem>
+           <AccordionHeader className='faq-wrapper-box' _expanded={{ bg: "#165a87", color: "white" }}>
+             <Box className='faq-box' flex="1" textAlign="left">
+             What if I have more questions before deciding to sell -my home?
+             </Box>
+             <AccordionIcon />
+           </AccordionHeader>
+           <AccordionPanel pb={4}>
+           Please feel free to contact us and discuss any additional questions over the phone, we love speaking with clients and helping them feel at ease during the process of selling us their home. You can send us your question(s) online or call us directly: 817-480-1556.
+           </AccordionPanel>
+         </AccordionItem>
+
+       </Accordion>
+          
           </ul>
         </section>
         {/* end homepage five */}
