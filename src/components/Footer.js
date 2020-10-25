@@ -107,7 +107,7 @@ export default function Footer() {
       </section>
       <section className="footer-bottom">
         <div className="footer-bottom-left">
-          <p>&copy; 2020 Legacy Rebuild Properties, LLC all right revsered</p>
+          <p>&copy; 2020 Legacy Rebuild Properties, LLC all right reserved</p>
         </div>
       </section>
     </footer>

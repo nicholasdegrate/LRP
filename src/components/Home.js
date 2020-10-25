@@ -118,10 +118,10 @@ export const Home = () => {
         {/* end homepage one  */}
         <section className="homepage-three">
           <div className="homepage-three-top">
-            <h3>"VISIONS"</h3>
+            <h3>VISIONS</h3>
             <h2>
-              Our vision is to help you gain a fresh
-              <br /> start using a no-hassle approach
+            Our vision is to help you gain a fresh
+start with a no-hassle approach and offering you a competitive cash offer for your house
             </h2>
           </div>
           <div className="homepage-three-left">
@@ -132,42 +132,19 @@ export const Home = () => {
               <li>
                 <h2> <img src={group} alt=""/> Who We Are</h2>
                 <p>
-                  Hello, here at Legacy rebuild properties our is mission to
-                  reach out and help as many distressed homeowners as possible.
-                  Over the years, we have become experts on educating and
-                  assisting homeowners through their foreclosure process. With
-                  all the constant changes from day to day occurring in the
-                  banking industry, you, the Homeowner, need someone you can
-                  trust to offer you open and honest advice to aid you in making
-                  the right decision at such a life-altering moment. The best
-                  part about our mission is our advice is 100% free to you as
-                  the homeowner. If you have any questions about your current
-                  situation and would like to speak with a local expert for
-                  friendly advice, please give us a call right away!
+                At Legacy Rebuild Properties our mission is to reach out and help as many homeowners as possible. Over the years, we have become experts on educating and assisting homeowners through the process of selling their house. With all the constant changes from day to day occurring in the banking industry, you need someone you can trust to offer open and honest advice and aid you in making the right decision at such a life-altering moment. The best part is our advice is 100% free to you as the homeowner. If you have any questions about selling your home fast, and receiving a competitive cash offer right away, give us a call today.
                 </p>
               </li>
               <li>
                 <h2><img src={book} alt=""/> Our Philosophy</h2>
                 <p>
-                  We understand there are times that life just happens, whether
-                  we are prepared for it or not. And unfortunately during those
-                  times you experience a major financial blow that you just
-                  cannot recover from and begin "robbing from Peter to pay
-                  Paul". We want to help you prevent harming your lifestyle,
-                  credit, peace of mind, and most importantly your legacy. We
-                  will help you rebuild!
+                We understand at times life just happens. Maybe you are experiencing a job loss, a divorce, expensive medical bills, tax liens, foreclosure, troubled tenants, or an unexpected inheritance causing financial stress. We want to help you prevent harming your lifestyle, credit, peace of mind, and most importantly your legacy. We can help you rebuild sooner than you think.
                 </p>
               </li>
               <li>
                 <h2> <img src={vote} alt=""/> Our Specialty</h2>
                 <p>
-                  We have over 20 years in home mortgage experience ranging from
-                  loan origination, foreclosure, bankruptcy, and modification
-                  options. However, our best expert advice comes in the form of
-                  providing options that will allow you as a -home owner to sell
-                  your home and put some much needed cash in your pockets to
-                  start a new chapter in your life without -harming your credit.
-                  We're just a phone call away.
+                With over 20 years of home mortgage experience our expert advice comes in the form of providing options that will allow you to sell your house quickly and put some much needed cash in your pockets without harming your lifestyle or credit in the process. We are just a phone call away.
                 </p>
               </li>
             </ul>
@@ -180,9 +157,9 @@ export const Home = () => {
       
           <div className="homepage-four-bottom">
             <div className="bottom-left">
-              <h3>"SOLUTIONS"</h3>
+              <h3>SOLUTIONS</h3>
               <h2>
-                No matter the condition or situation we will buy your property!
+              No matter the condition of your house or any situation you are experiencing, we have an immediate solution for you
               </h2>
             </div>
             <div className="bottom-right">
@@ -236,7 +213,7 @@ export const Home = () => {
                evaluated the condition of your home, we will then make a
                competitive, no-obligation cash offer based on the current
                market value of your home after a successful renovation,
-               discounting all associated renovation costs!.
+               discounting all associated renovation costs!
            </AccordionPanel>
          </AccordionItem>
 

@@ -85,7 +85,7 @@ export const HomeForm = () => {
             })
             .catch(() => {
               setSubmitting(false);
-              alert("Errror sending email...");
+              alert("Error sending email...");
               console.log("error");
             });
         }, 400);
@@ -133,7 +133,7 @@ export const HomeForm = () => {
             name="address"
             value={`${values.address}`}
             className="field"
-            placeholder="enter address"
+            placeholder="property address"
           />
           <div className="state-container">
             <Field
